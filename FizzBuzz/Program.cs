@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace FizzBuzz
 {
     internal class Program
-    {      
+    {
         static void Main(string[] args)
         {
             FizzBuzz fizzBuzz = new FizzBuzz();
-            fizzBuzz.StartGame();
+            Console.WriteLine(fizzBuzz.StartGame());
+            Console.ReadLine();
         }
     }
 }
