@@ -10,18 +10,24 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"Gra FizzBuzz! Wpisz liczbę podzielną przez 3, 5 lub 3 i 5.");
-
-            int number = ParseNumber();
+            Console.WriteLine($"Gra FizzBuzz! Wpisz liczbę podzielną przez 3 i 5.");            
 
             FizzBuzz fizzBuzz = new FizzBuzz();
 
-            Console.WriteLine(fizzBuzz.StartGame(number));
+            while (true)
+            {
+                int number = ParseNumber();
+                if (fizzBuzz.StartGame(number) != "\nFizzBuzz!")
+                {                    
+                    Console.WriteLine(fizzBuzz.StartGame(number));
+                    continue;
+                }
+                Console.WriteLine(fizzBuzz.StartGame(number));
+                break;
+            }
 
             Console.ReadLine();
-
         }
-
         public static int ParseNumber()
         {
             while (true)
