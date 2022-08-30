@@ -17,12 +17,15 @@ namespace FizzBuzz
             while (true)
             {
                 int number = ParseNumber();
-                if (fizzBuzz.StartGame(number) != "\nFizzBuzz!")
+
+                var dividend = fizzBuzz.StartGame(number);
+
+                if (dividend != "FizzBuzz!")
                 {                    
-                    Console.WriteLine(fizzBuzz.StartGame(number));
+                    Console.WriteLine(dividend);
                     continue;
                 }
-                Console.WriteLine(fizzBuzz.StartGame(number));
+                Console.WriteLine(dividend);
                 break;
             }
 
